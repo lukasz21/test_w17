@@ -1,0 +1,117 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Ubuntu", sans-serif;
+  background-color: #333;
+  overflow: hidden;
+}
+
+/*===== [1] card ======*/
+.card {
+  position: relative;
+  margin: 20px 80px;
+  width: 450px;
+  height: 700px;
+
+  /* kod =    perspective: 800px; */
+  perspective: 800px;
+  /* animacja kart - dodaje dodatkowy efekt wizualny. */
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  border-radius: 15px;
+  transition: 0.8s;
+}
+
+/*===== [1-2] img tlo ======*/
+.one {
+  background-image: url("../img/forest-56930_1280.jpg");
+}
+.two {
+  background-image: url("../img/valley-4646114_1920.jpg");
+}
+.three {
+  background-image: url("../img/namibia-4965456_1920.jpg");
+}
+
+/*
+
+*/
+/*===== [2] text ======*/
+.text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  /* tlo gradient */
+  background-image: linear-gradient(315deg, #fee2f8 0%, #dcf8ef 75%);
+  opacity: 0;
+  transition: 0.8s;
+}
+
+.text-one {
+  transform: rotateX(-180deg);
+}
+.text-two {
+  transform: rotateY(-180deg);
+}
+
+/*===== [2-1-1] jak zrobic animacje - gdzie dac HOVER ======*/
+/*  tylko tekst sie obraca, bez img */
+.card:hover .text {
+  transform: rotateX(0);
+  opacity: 1;
+}
+
+/*===== [2-1-2] jak zrobic animacje - gdzie dac HOVER ======*/
+/*  tylko  img  sie obraca*/
+.card:hover .one {
+  transform: rotateX(180deg);
+  opacity: 0;
+  /* autor mowi: to opacity tutaj nie jest konieczne. Bez tego też dobrze wyglada. To kwestia gustu. */
+}
+
+/*
+
+*/
+
+ /*===== [2-2-1] animcja dla 2 karty ======*/
+
+ .text-two {
+  transform: rotateY(-180deg);
+}
+
+.card:hover .two {
+  transform: rotateY(-180deg);
+  opacity: 0;
+}
+
+
+
+
+
+
+
+
+
+
+h3 {
+  margin-top: 450px;
+  margin-bottom: 20px;
+}
